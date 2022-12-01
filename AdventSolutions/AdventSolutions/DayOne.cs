@@ -8,15 +8,34 @@ namespace AdventSolutions
 {
     internal class DayOne
     {
-        private string[] _text = System.IO.File.ReadAllLines(@"C:\Users\Guti\Documents\GitHub\AdventOfCode2022\AdventSolutions\AdventSolutions\input.txt");
-        private int maxCalories = 0;
+        private readonly string[] _text = System.IO.File.ReadAllLines(@"C:\Users\Guti\Documents\GitHub\AdventOfCode2022\AdventSolutions\AdventSolutions\input.txt");
+        private int _maxCalories = 0;
+        private List<int> _elvesCalories = new();
 
 
-        public int CalculateMostValue()
+        public int FindMost()
+        {
+            //just for being sure, butmost value should be _elvesCalories[0]
+            foreach(int value in _elvesCalories)
+                if (value > _maxCalories)
+                    _maxCalories = value;
+
+            return _maxCalories;
+        }
+
+        public int SumOf(int limit)
+        {
+            int sum = 0;
+            for(int i = 0; i < limit; i++)
+                sum += _elvesCalories[i];
+
+            return sum;
+        }
+
+        public void CalculateValueForEach()
         {
             int sumOfCalories = 0;
-
-            foreach(var line in _text)
+            foreach (var line in _text)
             {
                 if (line != "")
                 {
@@ -31,13 +50,17 @@ namespace AdventSolutions
                 }
                 else
                 {
-                    if (sumOfCalories > maxCalories)
-                        maxCalories = sumOfCalories;
+                    _elvesCalories.Add(sumOfCalories);
                     sumOfCalories = 0;
                 }
             }
+            _elvesCalories.Sort();
+            _elvesCalories.Reverse();
 
-            return maxCalories;
+            //Debug Part
+            foreach (int value in _elvesCalories)
+                Console.WriteLine(value);
         }
+
     }
 }

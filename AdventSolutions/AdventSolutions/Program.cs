@@ -3,4 +3,6 @@ using AdventSolutions;
 
 Console.WriteLine("Hello, World!");
 DayOne dayOne = new DayOne();
-Console.WriteLine($"Max; {dayOne.CalculateMostValue()}");
+dayOne.CalculateValueForEach();
+Console.WriteLine($"Max: {dayOne.FindMost()}\n" +
+    $"Top 3 sum: {dayOne.SumOf(3)}");
