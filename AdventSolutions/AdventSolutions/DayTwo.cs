@@ -38,6 +38,35 @@ namespace AdventSolutions
             }
             return score; 
         }
+        public int NewRules()
+        {
+            int score = 0;
+            string player;
+            string oponent;
+
+            foreach (var line in _text)
+            {
+                player = line.Split(" ")[1];
+                oponent = line.Split(" ")[0];
+
+                switch (player)
+                {
+                    case "X"://we need to lose so no point
+                        //if oponent choose Rock +3forScissors, if choose Scissors +2forPaper, if choose Paper +1forRock
+                        score += oponent.Equals("A") ? 3 : oponent.Equals("C") ? 2 : 1;
+                        break;
+                    case "Y":
+                        score += 3;
+                        score += oponent.Equals("C") ? 3 : oponent.Equals("B") ? 2 : 1;
+                        break;
+                    case "Z":
+                        score += 6;
+                        score += oponent.Equals("B") ? 3 : oponent.Equals("A") ? 2 : 1;
+                        break;
+                }
+            }
+            return score;
+        }
 
     }
 }

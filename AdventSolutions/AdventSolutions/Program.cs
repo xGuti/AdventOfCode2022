@@ -11,4 +11,4 @@ Console.WriteLine($"Max: {dayOne.FindMost()}\n" +
 
 //Day two
 DayTwo dayTwo= new DayTwo();
-Console.WriteLine(dayTwo.Play());
+Console.WriteLine(dayTwo.NewRules());
