@@ -8,7 +8,7 @@ namespace AdventSolutions
 {
     internal class DayOne
     {
-        private readonly string[] _text = System.IO.File.ReadAllLines(@"C:\Users\Guti\Documents\GitHub\AdventOfCode2022\AdventSolutions\AdventSolutions\input.txt");
+        private readonly string[] _text = System.IO.File.ReadAllLines(@"C:\Users\Guti\Documents\GitHub\AdventOfCode2022\AdventSolutions\AdventSolutions\d1.txt");
         private int _maxCalories = 0;
         private List<int> _elvesCalories = new();
 
