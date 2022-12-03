@@ -10,5 +10,8 @@ Console.WriteLine($"Max: {dayOne.FindMost()}\n" +
     $"Top 3 sum: {dayOne.SumOf(3)}");*/
 
 //Day two
-DayTwo dayTwo= new DayTwo();
-Console.WriteLine(dayTwo.NewRules());
+/*DayTwo dayTwo= new DayTwo();
+Console.WriteLine(dayTwo.NewRules());*/
+
+DayThree dayThree = new ();
+Console.WriteLine($"Sum of wages: {dayThree.FindGroupsPrioritySum()}");
