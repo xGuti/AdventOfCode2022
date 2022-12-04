@@ -13,5 +13,8 @@ Console.WriteLine($"Max: {dayOne.FindMost()}\n" +
 /*DayTwo dayTwo= new DayTwo();
 Console.WriteLine(dayTwo.NewRules());*/
 
-DayThree dayThree = new ();
-Console.WriteLine($"Sum of wages: {dayThree.FindGroupsPrioritySum()}");
+/*DayThree dayThree = new ();
+Console.WriteLine($"Sum of wages: {dayThree.FindGroupsPrioritySum()}");*/
+
+DayFour dayFour= new DayFour();
+Console.WriteLine(dayFour.CountOverlaps());
