@@ -37,10 +37,8 @@ namespace AdventSolutions
             foreach(string line in _text)
             {
                 Elf[] elf = PrepareData(line);
-                if ( (elf[0].LowerIndex <= elf[1].LowerIndex &&
-                     elf[0].UpperIndex >= elf[1].UpperIndex ) ||
-                     (elf[1].LowerIndex <= elf[0].LowerIndex &&
-                     elf[1].UpperIndex >= elf[0].UpperIndex) )
+                if ( (elf[0].LowerIndex <= elf[1].LowerIndex && elf[0].UpperIndex >= elf[1].UpperIndex ) ||
+                     (elf[1].LowerIndex <= elf[0].LowerIndex && elf[1].UpperIndex >= elf[0].UpperIndex) )
                     _recurringRanges++;
             }
             return _recurringRanges;
@@ -51,10 +49,17 @@ namespace AdventSolutions
             foreach (string line in _text)
             {
                 Elf[] elf = PrepareData(line);
-                if ((elf[0].LowerIndex <= elf[1].LowerIndex && elf[1].LowerIndex <= elf[0].UpperIndex) ||
+
+                var rangeElf0 = Enumerable.Range(elf[0].LowerIndex, 1+elf[0].UpperIndex - elf[0].LowerIndex);
+                var rangeElf1 = Enumerable.Range(elf[1].LowerIndex, 1+elf[1].UpperIndex - elf[1].LowerIndex);
+
+                var isElf0 = rangeElf0.Contains(elf[1].LowerIndex) || rangeElf0.Contains(elf[1].UpperIndex);
+                var isElf1 = rangeElf1.Contains(elf[0].LowerIndex) || rangeElf1.Contains(elf[0].UpperIndex);
+                /*if ((elf[0].LowerIndex <= elf[1].LowerIndex && elf[1].LowerIndex <= elf[0].UpperIndex) ||
                     (elf[0].UpperIndex >= elf[1].UpperIndex && elf[1].UpperIndex >= elf[0].LowerIndex) ||
                     (elf[1].LowerIndex <= elf[0].LowerIndex && elf[0].LowerIndex <= elf[1].UpperIndex) ||
-                    (elf[1].UpperIndex >= elf[0].UpperIndex && elf[0].UpperIndex >= elf[1].LowerIndex) )
+                    (elf[1].UpperIndex >= elf[0].UpperIndex && elf[0].UpperIndex >= elf[1].LowerIndex) )*/
+                if (isElf0 || isElf1)
                     _recurringRanges++;
             }
             return _recurringRanges;
