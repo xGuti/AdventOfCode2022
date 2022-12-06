@@ -16,5 +16,12 @@ Console.WriteLine(dayTwo.NewRules());*/
 /*DayThree dayThree = new ();
 Console.WriteLine($"Sum of wages: {dayThree.FindGroupsPrioritySum()}");*/
 
-DayFour dayFour= new DayFour();
-Console.WriteLine(dayFour.CountOverlaps());
+/*DayFour dayFour= new DayFour();
+Console.WriteLine(dayFour.CountOverlaps());*/
+
+/*DayFive dayFive= new DayFive();
+Console.WriteLine(dayFive.Move(true));*/
+
+DaySix daysix = new ();
+Console.WriteLine($"Marker: {daysix.findMarker(4)}");//marker
+Console.WriteLine($"Message: {daysix.findMarker(14)}");//Mesydż
