@@ -22,6 +22,9 @@ Console.WriteLine(dayFour.CountOverlaps());*/
 /*DayFive dayFive= new DayFive();
 Console.WriteLine(dayFive.Move(true));*/
 
-DaySix daysix = new ();
+/*DaySix daysix = new ();
 Console.WriteLine($"Marker: {daysix.findMarker(4)}");//marker
-Console.WriteLine($"Message: {daysix.findMarker(14)}");//Mesydż
+Console.WriteLine($"Message: {daysix.findMarker(14)}");//Mesydż*/
+
+DayEight dayEight= new DayEight();
+Console.WriteLine(dayEight.CountVisible());
